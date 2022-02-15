@@ -7,6 +7,7 @@ from django.http import JsonResponse
 from django.views.generic.edit import FormView
 from django.views.generic.base import TemplateView
 from django.utils.decorators import method_decorator
+from requests import request
 
 from did_django_google_api_tutorial.mixins import (
     AjaxFormMixin,
@@ -137,8 +138,8 @@ class SignInView(AjaxFormMixin, FormView):
 
 def sign_out(request):
     """
-    Basic view for user sign out
-    """
+       Basic view for user sign out
+       """
     logout(request)
     return redirect(reverse('users:sign-in'))
 
