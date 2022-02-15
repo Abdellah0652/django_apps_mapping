@@ -119,6 +119,7 @@ class SignInView(AjaxFormMixin, FormView):
     success_url = "/"
 
     def form_valid(self, form):
+        global result
         response = super(AjaxFormMixin, self).form_valid(form)
         if self.request.is_ajax():
             username = form.cleaned_data.get('username')
